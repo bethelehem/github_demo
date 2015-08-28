@@ -1,0 +1,187 @@
+<html ng-app="myApp">
+<head>
+<script src= "http://ajax.googleapis.com./ajax/libs/angularjs/1.2.26/angular.min.js">
+</script>
+<script>
+myApp=angular.module('myApp',[]);
+myApp.controller('myController',function($scope,$http){
+
+    $scope.myData = [
+    {
+      "id": "abc99cf1-a240-4297-9fad-c093f1aa7b20",
+      "firstName": "Courtney",
+      "lastName": " Livingston",
+      "city": "Hanahan",
+      "stateCode": "SC",
+      "countryCode": "USA"
+    },
+    {
+      "id": "f7448905-cbee-4b94-a402-d0f7c5d9c4d9",
+      "firstName": "Suzanne",
+      "lastName": " McDade",
+      "city": "Charlotte",
+      "stateCode": "NC",
+      "countryCode": "USA"
+    },
+    {
+      "id": "5ef58139-c9aa-4b24-88ed-0028e40a13bb",
+      "firstName": "Allison",
+      "lastName": " Muth",
+      "city": "Houston",
+      "stateCode": "TX",
+      "countryCode": "USA"
+    },
+    {
+      "id": "c8457c45-9ff4-4152-8404-2f780f58579f",
+      "firstName": "Behrnt",
+      "lastName": "Aaberg",
+      "city": "Chicago",
+      "stateCode": "IL",
+      "countryCode": "USA"
+    },
+    {
+      "id": "1f79f0f0-a8d7-4742-b900-81730e2a04f1",
+      "firstName": "Hussein",
+      "lastName": "Aal",
+      "city": "Atlanta",
+      "stateCode": "GA",
+      "countryCode": "USA"
+    },
+    {
+      "id": "f99ba15a-63ea-4644-9c8c-f2a83669f91b",
+      "firstName": "Mette",
+      "lastName": "Aamodt",
+      "city": "Arlington",
+      "stateCode": "MA",
+      "countryCode": "USA"
+    },
+    {
+      "id": "946a2ae6-108f-4060-9fa3-019ef347c0bc",
+      "firstName": "Brian",
+      "lastName": "Aamoth",
+      "city": "Los Angeles",
+      "stateCode": "CA",
+      "countryCode": "USA"
+    },
+    {
+      "id": "f9632fc7-67cb-4326-87a0-341b1fca66da",
+      "firstName": "Lawrence",
+      "lastName": "Aaron",
+      "city": null,
+      "stateCode": null,
+      "countryCode": null
+    },
+    {
+      "id": "f60d7bca-89b7-406d-9bb7-141232aa46ff",
+      "firstName": "Shane",
+      "lastName": "Aaron",
+      "city": "Tulsa",
+      "stateCode": "OK",
+      "countryCode": "USA"
+    },
+    {
+      "id": "9748c1c9-f4e5-4f7a-bfd9-418361248800",
+      "firstName": "Ronald",
+      "lastName": "Aarons",
+      "city": "Westlake Village",
+      "stateCode": "CA",
+      "countryCode": "USA"
+    },
+    {
+      "id": "5210c2a5-11e9-4327-88d0-a27d36538ad7",
+      "firstName": "Harold",
+      "lastName": "Aavang",
+      "city": "Denver",
+      "stateCode": "CO",
+      "countryCode": "USA"
+    },
+    {
+      "id": "cb95fbfd-e36f-4caf-a376-efdfd0f03bcc",
+      "firstName": "Mustafa",
+      "lastName": "Abadan",
+      "city": "New York",
+      "stateCode": "NY",
+      "countryCode": "USA"
+    },
+    {
+      "id": "8692388e-2980-49fe-9479-2e38aaa07250",
+      "firstName": "Benjamin",
+      "lastName": "Abad-Santos",
+      "city": "Las Vegas",
+      "stateCode": "NV",
+      "countryCode": "USA"
+    },
+    {
+      "id": "ac5783b6-b670-41e2-ac94-d63858d7d2c4",
+      "firstName": "Julie",
+      "lastName": "Abajian",
+      "city": "Sierra Madre",
+      "stateCode": "CA",
+      "countryCode": "USA"
+    },
+    {
+      "id": "d178912c-5ad4-477a-9f80-b204ecc4a977",
+      "firstName": "Pamela",
+      "lastName": "Abalu",
+      "city": "New York City",
+      "stateCode": "NY",
+      "countryCode": "USA"
+    },
+    {
+      "id": "48301aac-c9da-46ef-90bf-bec00a020cf9",
+      "firstName": "Maria",
+      "lastName": "Abarca",
+      "city": "Austin",
+      "stateCode": "TX",
+      "countryCode": "USA"
+    },
+    {
+      "id": "0569cb67-5dec-4837-b15f-469a7879364c",
+      "firstName": "Samuel",
+      "lastName": "Abate",
+      "city": "OCEAN",
+      "stateCode": "NJ",
+      "countryCode": "USA"
+    },
+    {
+      "id": "9ec3f820-07fa-4bdc-bf9a-932b151b501c",
+      "firstName": "Anna",
+      "lastName": "Abaya",
+      "city": "Houston",
+      "stateCode": "TX",
+      "countryCode": "USA"
+    },
+    {
+      "id": "37f0b2d2-f8bb-4cb9-b9a5-a7e5d6535c20",
+      "firstName": "Anthony",
+      "lastName": "Abbate",
+      "city": "Fort Lauderdale",
+      "stateCode": "FL",
+      "countryCode": "USA"
+    },
+    {
+      "id": "fe7eba68-b169-40a9-81f9-80e19175be4e",
+      "firstName": "Mark",
+      "lastName": "Abbey",
+      "city": "Indianapolis",
+      "stateCode": "IN",
+      "countryCode": "USA"
+    }];
+});
+</script>
+</head>
+<body ng-controller="myController">
+    <label>Search:<input ng-model="searchText"></label>
+    
+<table id="searchTextResults" border=1>
+    <tr><th>FirstName</th><th>LastName</th><th>City</th><th>StateCode</th><th>CountyCode</th></tr>
+<tr ng-repeat="data in myData | filter:searchText">
+    <td>{{data.firstName}}</td>
+    <td>{{data.lastName}}</td>
+    <td>{{data.city}}</td>
+    <td>{{data.stateCode}}</td>
+    <td>{{data.countryCode}}</td>
+</tr>
+</table>
+</body>
+</html>
