@@ -1,0 +1,22 @@
+
+<div ng-controller ="ArticlesCtrl">
+
+
+    <label>Search:<input ng-model="searchText"></label>
+    
+
+<table id="searchTextResults" border=1>
+ <tr><th>FirstName</th><th>LastName</th><th>City</th><th>StateCode</th><th>CountyCode</th></tr>
+
+<tr ng-repeat="article in articles | filter:searchText">
+
+    <td>{{article.firstName}}</td>
+    <td>{{article.lastName}}</td>
+    <td>{{article.city}}</td>
+    <td>{{article.stateCode}}</td>
+    <td>{{article.countryCode}}</td>
+</tr>
+</table>
+
+</div>
+
