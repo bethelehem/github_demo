@@ -1,0 +1,77 @@
+<!-- 
+<div ng-controller ="ArticlesCtrl">
+
+
+    <label>Search:<input ng-model="searchText"></label>
+    
+
+<table id="searchTextResults" border=1>
+ <tr><th>FirstName</th><th>LastName</th><th>City</th><th>StateCode</th><th>CountyCode</th></tr>
+
+<tr ng-repeat="article in articles | filter:searchText">
+
+    <td>{{article.firstName}}</td>
+    <td>{{article.lastName}}</td>
+    <td>{{article.city}}</td>
+    <td>{{article.stateCode}}</td>
+    <td>{{article.countryCode}}</td>
+</tr>
+</table>
+
+</div> -->
+<h1>article Search</h1>
+
+<div id="articleList">
+    <form class="form-horizontal" ng-submit="vm.submit()">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="firstName" ng-model="vm.filter.firstName"/>
+            </div>
+
+            <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="lastName" ng-model="vm.filter.lastName"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">City</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="city" ng-model="vm.filter.city"/>
+            </div>
+
+            <label for="state" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="state" ng-model="vm.filter.stateCode"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </div>
+    </form>
+
+    <div dw-loading="articles">
+        <table ng-table="vm.tableParams" show-filter="false" class="table table-bordered table-striped row-border hover">
+            <tr ng-repeat="article in articles">
+                <td data-title="'FirstName'">
+                    {{ article.firstName }}
+                </td>
+                <td data-title="'Last Name'">
+                    {{ article.lastName }}
+                </td>
+                <td data-title="'City'">
+                    {{ article.city }}
+                </td>
+                <td data-title="'State'">
+                    {{ article.stateCode }}
+                </td>
+                <td data-title="'Country'">
+                    {{ article.countryCode }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
